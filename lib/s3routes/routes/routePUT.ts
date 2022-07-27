@@ -219,8 +219,10 @@ export default function routePUT(
             // TODO ARSN-216 What's happening?
             // @ts-ignore
             log.end().addDefaultFields({ contentLength: request.parsedContentLength });
+            console.time('callApiMethodPut');
             api.callApiMethod('objectPut', request, response, log,
                 (err, resHeaders) => {
+                    console.timeEnd('callApiMethodPut');
                     routesUtils.statsReport500(err, statsClient);
                     return routesUtils.responseNoBody(err, resHeaders,
                         response, 200, log);
