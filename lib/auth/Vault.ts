@@ -172,6 +172,8 @@ export default class Vault {
         requestContexts: any[] | null,
         callback: (err: Error | null, data?: any) => void
     ) {
+        const rd = Math.random().toString();
+        console.time(rd+'authenticateV4Request');
         params.log.debug('authenticating V4 request');
         let serializedRCs: any;
         if (requestContexts) {
@@ -197,8 +199,11 @@ export default class Vault {
                 securityToken: params.data.securityToken,
                 requestContext: serializedRCs,
             },
-            (err: Error | null, userInfo?: any) => vaultSignatureCb(err, userInfo,
-                params.log, callback, streamingV4Params),
+            (err: Error | null, userInfo?: any) => {
+                console.timeEnd(rd+'authenticateV4Request');
+                return vaultSignatureCb(err, userInfo,
+                params.log, callback, streamingV4Params)
+            },
         );
     }
 
