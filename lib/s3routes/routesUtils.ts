@@ -62,7 +62,8 @@ function okHeaderResponse(
     httpCode: number,
     log: RequestLogger,
 ) {
-    console.time('okHeaderResponse');
+    const rd = Math.random().toString();
+    console.time(rd+'okHeaderResponse');
     log.trace('sending success header response');
     setCommonResponseHeaders(headers, response, log);
     log.debug('response http code', { httpCode });
@@ -73,7 +74,7 @@ function okHeaderResponse(
         log.end().info('responded to request', {
             httpCode: response.statusCode,
         });
-        console.timeEnd('okHeaderResponse');
+        console.timeEnd(rd+'okHeaderResponse');
     });
 }
 
@@ -630,7 +631,8 @@ export function responseStreamData(
     range: [number, number] | undefined,
     log: RequestLogger,
 ) {
-    console.time('responseStreamData');
+    const rd = Math.random().toString();
+    console.time(rd+'responseStreamData');
     if (errCode && !response.headersSent) {
         return XMLResponseBackend.errorResponse(errCode, response, log,
             resHeaders);
@@ -669,7 +671,7 @@ export function responseStreamData(
         log.end().info('responded with streamed content', {
             httpCode: response.statusCode,
         });
-        console.timeEnd('responseStreamData');
+        console.timeEnd(rd+'responseStreamData');
     });
     return retrieveData(dataLocations, retrieveDataParams, response, log);
 }

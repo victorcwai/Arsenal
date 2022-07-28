@@ -76,7 +76,8 @@ export default function routerGET(
         } else if (query.retention !== undefined) {
             call('objectGetRetention');
         } else {
-            console.time('callApiMethod');
+            const rd = Math.random().toString();
+            console.time(rd+'callApiMethod');
             // GET object
             api.callApiMethod('objectGet', request, response, log,
                 (err, dataGetInfo, resMetaHeaders, range) => {
@@ -88,7 +89,7 @@ export default function routerGET(
                     // @ts-ignore
                     log.end().addDefaultFields({ contentLength });
                     routesUtils.statsReport500(err, statsClient);
-                    console.timeEnd('callApiMethod');
+                    console.timeEnd(rd+'callApiMethod');
                     return routesUtils.responseStreamData(err, query,
                         resMetaHeaders, dataGetInfo, dataRetrievalParams, response,
                         range, log);
