@@ -72,6 +72,7 @@ export type AuthV4RequestParams = {
 export default class Vault {
     client: any;
     implName: string;
+    bypass: boolean;
 
     /**
      * @constructor
@@ -81,6 +82,10 @@ export default class Vault {
     constructor(client: any, implName: string) {
         this.client = client;
         this.implName = implName;
+        this.bypass = false;
+        if (process.env.BYPASS_VAULT && process.env.BYPASS_VAULT != '0') {
+            this.bypass = true;
+        }
     }
     /**
      * authenticateV2Request
@@ -189,7 +194,7 @@ export default class Vault {
             scopeDate: params.data.scopeDate,
             timestamp: params.data.timestamp,
             credentialScope: params.data.credentialScope };
-        if (global.v1 && process.env.BYPASS_VAULT) {
+        if (global.v1 && this.bypass) {
             console.timeEnd(rd+'authenticateV4Request');
             // @ts-ignore
             return callback(null, global.v1, global.v2, global.v3)
