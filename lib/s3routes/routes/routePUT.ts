@@ -220,10 +220,10 @@ export default function routePUT(
             // @ts-ignore
             log.end().addDefaultFields({ contentLength: request.parsedContentLength });
             const rd = Math.random().toString();
-            console.time(rd+'callApiMethodPut');
+            // console.time(rd+'callApiMethodPut');
             api.callApiMethod('objectPut', request, response, log,
                 (err, resHeaders) => {
-                    console.timeEnd(rd+'callApiMethodPut');
+                    // console.timeEnd(rd+'callApiMethodPut');
                     routesUtils.statsReport500(err, statsClient);
                     return routesUtils.responseNoBody(err, resHeaders,
                         response, 200, log);

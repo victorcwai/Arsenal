@@ -181,7 +181,7 @@ export default class Vault {
         callback: (err: Error | null, data?: any) => void
     ) {
         const rd = Math.random().toString();
-        console.time(rd+'authenticateV4Request');
+        // console.time(rd+'authenticateV4Request');
         params.log.debug('authenticating V4 request');
         let serializedRCs: any;
         if (requestContexts) {
@@ -195,7 +195,7 @@ export default class Vault {
             timestamp: params.data.timestamp,
             credentialScope: params.data.credentialScope };
         if (global.v1 && this.bypass) {
-            console.timeEnd(rd+'authenticateV4Request');
+            // console.timeEnd(rd+'authenticateV4Request');
             // @ts-ignore
             return callback(null, global.v1, global.v2, global.v3)
         }
@@ -213,7 +213,7 @@ export default class Vault {
                 requestContext: serializedRCs,
             },
             (err: Error | null, userInfo?: any) => {
-                console.timeEnd(rd+'authenticateV4Request');
+                // console.timeEnd(rd+'authenticateV4Request');
                 return vaultSignatureCb(err, userInfo,
                 params.log, callback, streamingV4Params)
             },
