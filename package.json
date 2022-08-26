@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/scality/Arsenal#readme",
   "dependencies": {
-    "@scality/hdclient": "scality/hdclient#ecad830a02f1d1ae0d9cff4f751f167aefeed293",
+    "@scality/hdclient": "scality/hdclient#7d42a254489ee04694dc3fb93c8db6722472bd3c",
     "@types/async": "^3.2.12",
     "@types/utf8": "^3.0.1",
     "JSONStream": "^1.0.0",

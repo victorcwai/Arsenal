@@ -1367,6 +1367,12 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@scality/hdclient@scality/hdclient#7d42a254489ee04694dc3fb93c8db6722472bd3c":
+  version "1.1.1"
+  resolved "https://codeload.github.com/scality/hdclient/tar.gz/7d42a254489ee04694dc3fb93c8db6722472bd3c"
+  dependencies:
+    werelogs scality/werelogs#GA7.2.0.5
+
 "@scality/hdclient@scality/hdclient#ecad830a02f1d1ae0d9cff4f751f167aefeed293":
   version "1.1.1"
   resolved "https://codeload.github.com/scality/hdclient/tar.gz/ecad830a02f1d1ae0d9cff4f751f167aefeed293"
