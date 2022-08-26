@@ -1367,6 +1367,12 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@scality/hdclient@scality/hdclient#ecad830a02f1d1ae0d9cff4f751f167aefeed293":
+  version "1.1.1"
+  resolved "https://codeload.github.com/scality/hdclient/tar.gz/ecad830a02f1d1ae0d9cff4f751f167aefeed293"
+  dependencies:
+    werelogs scality/werelogs#GA7.2.0.5
+
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
@@ -3403,12 +3409,6 @@ hasha@^5.0.0:
   dependencies:
     is-stream "^2.0.0"
     type-fest "^0.8.0"
-
-hdclient@scality/hdclient#1.1.0:
-  version "1.1.0"
-  resolved "https://codeload.github.com/scality/hdclient/tar.gz/dd6d952e39ca89133019bafbb33eef6c418689f8"
-  dependencies:
-    werelogs scality/werelogs#GA7.2.0.5
 
 html-encoding-sniffer@^2.0.1:
   version "2.0.1"
