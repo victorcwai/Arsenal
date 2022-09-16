@@ -29,12 +29,12 @@ export function getClientIp(request: IncomingMessage, s3config?: S3Config): stri
          * check from config which proxies are to be trusted and
          * which header to be used to extract client IP
          */
-        if (ipCheck.ipMatchCidrList(trustedProxyCIDRs, clientIp)) {
+        // if (ipCheck.ipMatchCidrList(trustedProxyCIDRs, clientIp)) {
             const ipFromHeader = request.headers[extractClientIPFromHeader]?.toString();
             if (ipFromHeader && ipFromHeader.trim().length) {
                 return ipFromHeader.split(',')[0].trim();
             }
-        }
+        // }
     }
     return clientIp?.toString() ?? '';
 }
