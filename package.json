@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/scality/Arsenal#readme",
   "dependencies": {
-    "@scality/hdclient": "scality/hdclient#7d42a254489ee04694dc3fb93c8db6722472bd3c",
+    "@scality/hdclient": "scality/hdclient#d734d57600d02d69de92369fbbedb74301c1824a",
     "@types/async": "^3.2.12",
     "@types/utf8": "^3.0.1",
     "JSONStream": "^1.0.0",
@@ -34,7 +34,7 @@
     "diskusage": "^1.1.1",
     "fast-json-stable-stringify": "^2.1.0",
     "fcntl": "github:scality/node-fcntl#0.2.0",
-    "hdclient": "scality/hdclient#ecad830a02f1d1ae0d9cff4f751f167aefeed293",
+    "hdclient": "scality/hdclient#d734d57600d02d69de92369fbbedb74301c1824a",
     "https-proxy-agent": "^2.2.0",
     "ioredis": "^4.28.5",
     "ipaddr.js": "1.9.1",
