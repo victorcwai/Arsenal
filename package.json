@@ -28,7 +28,7 @@
     "backo": "^1.1.0",
     "base-x": "3.0.8",
     "base62": "2.0.1",
-    "bson": "4.0.0",
+    "bson": "4.7.2",
     "debug": "~4.1.0",
     "diskusage": "^1.1.1",
     "fcntl": "github:scality/node-fcntl#0.2.0",
