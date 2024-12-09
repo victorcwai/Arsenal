@@ -7,7 +7,7 @@
     "test": "mocha --recursive --timeout 5500 tests/unit"
   },
   "dependencies": {
-    "mocha": "5.2.0",
+    "mocha": "11.0.1",
     "async": "~2.6.1",
     "node-forge": "^0.7.1"
   }
